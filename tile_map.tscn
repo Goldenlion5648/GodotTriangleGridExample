@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbb4ea6fvnjid"]
+
+[ext_resource type="Texture2D" uid="uid://dlpof0faexkm4" path="res://hex_grid.png" id="1_f5gel"]
+[ext_resource type="Script" path="res://tile_map.gd" id="2_rxjik"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_numfc"]
+texture = ExtResource("1_f5gel")
+margins = Vector2i(9, 8)
+separation = Vector2i(18, 0)
+texture_region_size = Vector2i(110, 94)
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ycaxw"]
+tile_shape = 3
+tile_layout = 4
+tile_size = Vector2i(94, 94)
+sources/0 = SubResource("TileSetAtlasSource_numfc")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_ycaxw")
+format = 2
+script = ExtResource("2_rxjik")
+should_highlight_adjacents = false
